@@ -14,21 +14,23 @@
 		<hr><hr>
 		<button onclick="calc();">Посчитать</button>
 		<hr><hr>
-		<p id="rez_mp"></p>
-		<p id="rez_ch"></p>
-		
 		<p>Игры: <select id="inpGame" style=" ">
 				<option value="0">	Нет	</option>
 				<option value="60">	Есть		</option>
 			</select>
 			
-			Урок (60/40): <select id="inpLesson" style=" ">
+			&emsp;&emsp;Урок (60/40): <select id="inpLesson" style=" ">
 				<option value="0">	Нет	</option>
 				<option value="0.5">	Есть	</option>
 			</select>
 			
-			КО: <input id="inpKO" type="number" value="0" min="0" max="20" step="1">
+			&emsp;&emsp;КО: <input id="inpKO" type="number" value="0" min="0" max="20" step="1">
 		</p>
+		<hr><hr>
+		
+		<p id="rez_mp"></p>
+		<p id="rez_ch"></p>
+		
 	</div>
 	<script type="text/javascript">	
 		function calc(){
@@ -51,7 +53,7 @@
 			
 			if((M_Gen!=0)&&(P_Gen!=0)){
 				VN=((M_Gen*1+P_Gen*1)/2)*0.312;
-				KN= VN*1+(M_Gen*1+P_Gen*1)/2) + bon*1;
+				KN= VN*1+((M_Gen*1+P_Gen*1)/2) + bon*1;
 				document.getElementById('rez_mp').innerHTML = "<b>По ГП родителей:</b> " + VN + "   <b>Конечные навыки:</b> " + KN;
 				temp++;
 			}
