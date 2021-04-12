@@ -16,6 +16,19 @@
 		<hr><hr>
 		<p id="rez_mp"></p>
 		<p id="rez_ch"></p>
+		
+		<p>Игры: <select id="inpGame" style=" ">
+				<option value="0">	Нет	</option>
+				<option value="60">	Есть		</option>
+			</select>
+			
+			Урок (60/40): <select id="inpLesson" style=" ">
+				<option value="0">	Нет	</option>
+				<option value="0.5">	Есть	</option>
+			</select>
+			
+			КО: <input id="inpKO" type="number" value="0" min="0" max="20" step="1">
+		</p>
 	</div>
 	<script type="text/javascript">	
 		function calc(){
@@ -23,18 +36,29 @@
 		document.getElementById('rez_ch').innerHTML = "";
 			var M_Gen=parseFloat(document.getElementById('M_Gen').value);
 			var P_Gen=parseFloat(document.getElementById('P_Gen').value);
-			var C_Gen=document.getElementById('C_Gen').value;
+			var C_Gen=parseFloat(document.getElementById('C_Gen').value);
+			
+			var i_G=parseFloat(document.getElementById('inpGame').value);
+			var i_L=parseFloat(document.getElementById('inpLesson').value);
+			var i_O=parseFloat(document.getElementById('inpKO').value);
+			
 			var temp = 0;
 			var VN = 0;
+			var KN = 0;
+			var bon = 0;
+			
+			bon=i_G*1 + i_L*(276 + i_O*4);
 			
 			if((M_Gen!=0)&&(P_Gen!=0)){
 				VN=((M_Gen*1+P_Gen*1)/2)*0.312;
-				document.getElementById('rez_mp').innerHTML = "<b>По ГП родителей:</b> " + VN;
+				KN= VN*1+(M_Gen*1+P_Gen*1)/2) + bon*1;
+				document.getElementById('rez_mp').innerHTML = "<b>По ГП родителей:</b> " + VN + "   <b>Конечные навыки:</b> " + KN;
 				temp++;
 			}
 			
 			if (C_Gen!=0){
 				VN= C_Gen*0.312;
+				KN= VN*1+(C_Gen*1) + bon*1;
 				document.getElementById('rez_ch').innerHTML = "<b>По ГП жеребёнка:</b> " + VN;
 				temp++;
 			}
