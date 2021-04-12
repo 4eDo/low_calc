@@ -41,6 +41,7 @@
 		function calc(){
 		document.getElementById('rez_mp').innerHTML = "";
 		document.getElementById('rez_ch').innerHTML = "";
+		document.getElementById('rez_vn').innerHTML = "";
 			var M_Gen=parseFloat(document.getElementById('M_Gen').value);
 			var P_Gen=parseFloat(document.getElementById('P_Gen').value);
 			var C_Gen=parseFloat(document.getElementById('C_Gen').value);
@@ -74,7 +75,7 @@
 			
 			if ((C_Gen2!=0)&&(C_Vn!=0)){
 				
-				KN= VN*1+(C_Gen2*1) + bon*1;
+				KN= C_Vn*1+(C_Gen2*1) + bon*1;
 				document.getElementById('rez_vn').innerHTML = "<b>По ГП и ВН жеребёнка конечные навыки:</b> " + KN;
 				temp++;
 			}
