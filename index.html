@@ -28,7 +28,12 @@
 			var VN = 0;
 			
 			if((M_Gen!=0)&&(P_Gen!=0)){
+				console.log(M_Gen);
+				console.log(P_Gen);
+				console.log(C_Gen);
 				VN=((M_Gen+P_Gen)/2)*0.312;
+				
+				console.log(VN);
 				document.getElementById('rez_mp').innerHTML = "<b>По ГП родителей:</b> " + VN;
 				temp++;
 			}
