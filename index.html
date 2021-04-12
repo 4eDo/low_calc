@@ -9,9 +9,9 @@
 	<div class="container">
 		<p>ГП мамы: <input id="M_Gen" type="number" value="0" min="0" step="0.01"></p>
 		<p>ГП папы: <input id="P_Gen" type="number" value="0" min="0" step="0.01"></p>
-		<hr><p> или </p><hr>
+		<hr><p>&emsp;&emsp;&emsp;&emsp;или </p><hr>
 		<p>ГП жеребёнка: <input id="C_Gen" type="number" value="0" min="0" step="0.01"></p>
-		<hr><p> или </p><hr>
+		<hr><p>&emsp;&emsp;&emsp;&emsp;или </p><hr>
 		<p>ГП жеребёнка: <input id="C_Gen2" type="number" value="0" min="0" step="0.01"></p>
 		<p>ВН жеребёнка: <input id="C_Vn" type="number" value="0" min="0" step="0.01"></p>
 		
@@ -34,6 +34,7 @@
 		
 		<p id="rez_mp"></p>
 		<p id="rez_ch"></p>
+		<p id="rez_vn"></p>
 		
 	</div>
 	<script type="text/javascript">	
@@ -74,7 +75,7 @@
 			if ((C_Gen2!=0)&&(C_Vn!=0)){
 				
 				KN= VN*1+(C_Gen2*1) + bon*1;
-				document.getElementById('rez_ch').innerHTML = "<b>По ГП и ВН жеребёнка конечные навыки:</b> " + KN;
+				document.getElementById('rez_vn').innerHTML = "<b>По ГП и ВН жеребёнка конечные навыки:</b> " + KN;
 				temp++;
 			}
 			
