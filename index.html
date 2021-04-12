@@ -28,12 +28,12 @@
 			var temp = 0;
 			
 			if((M_Gen!=0)&&(P_Gen!=0)){
-				document.getElementById('rez_mp').value = "<b>По ГП родителей:</b> " + (M_Gen+P_Gen)*0.5*0.312;
+				document.getElementById('rez_mp').innerHTML = "<b>По ГП родителей:</b> " + (M_Gen+P_Gen)*0.5*0.312;
 				temp++;
 			}
 			
 			if (C_Gen!=0){
-				document.getElementById('rez_ch').value = "<b>По ГП жеребёнка:</b> " + C_Gen*0.312;
+				document.getElementById('rez_ch').innerHTML = "<b>По ГП жеребёнка:</b> " + C_Gen*0.312;
 				temp++;
 			}
 			
