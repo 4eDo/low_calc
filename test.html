@@ -3,43 +3,42 @@
 <p id="ok"></p>
 <script>
   function initFingerprintJS() {
-    // Initialize an agent at application startup.
     const fpPromise = FingerprintJS.load();
 
-    // Get the visitor identifier when you need it.
     fpPromise
-      .then(fp => fp.get())
-      .then(result => {
-        // This is the visitor identifier:
-        const visitorId = result.visitorId;
-        document.getElementById('test').innerHTML=visitorId;
-      });
-  }
-  
-  var UD;
-      fetch("https://4edo.github.io/scripts/rst_UD.json")
-  .then(resp => resp.json())
-  .then(data => {
-            console.log(data);
-            UD=data;
-            console.log(UD[0].IDs[0]);
-      var visitorId = document.getElementById('test').textContent;
-            console.log(visitorId);
-      var isUser=false;
-      var UDlen=UD.length;
-            console.log(UDlen);
-        for(let i = 0; i < UDlen; i++) {
-              if((UD[i].isOK)&&!isUser){
-                    let IDlen = UD[i].IDs.length;
-                    console.log(IDlen);
-                  for(let j = 0; j<IDlen; j++){
-                        if(UD[i].IDs[j]==visitorId){ document.getElementById('ok').innerHTML="Проверка пройдена!"; isUser=true; break; }
-                  }
-              }
-              if(isUser){break;}
-        }
+		.then(fp => fp.get())
+		.then(result => {
+			const visitorId = result.visitorId;
+			document.getElementById('test').innerHTML=visitorId;
+			searchUser(visitorId);
+		});
+	}
 
-   });   
+	function searchUser(visitorId){
+		fetch("https://4edo.github.io/scripts/rst_UD.json")
+			.then(resp => resp.json())
+			.then(data => {
+				console.log(data);
+				var UD=data;
+				console.log(UD[0].IDs[0]);
+				
+				console.log(visitorId);
+				var isUser=false;
+				var UDlen=UD.length;
+				console.log(UDlen);
+				for(let i = 0; i < UDlen; i++) {
+					if((UD[i].isOK)&&!isUser){
+						let IDlen = UD[i].IDs.length;
+						console.log(IDlen);
+						for(let j = 0; j<IDlen; j++){
+							if(UD[i].IDs[j]==visitorId){ document.getElementById('ok').innerHTML="Проверка пройдена!"; isUser=true; break; }
+						}
+					}
+					if(isUser){break;}
+				}
+
+		});
+	}
 </script>
 <script
   async
