@@ -25,10 +25,10 @@
             console.log(UD[0].IDs[0]);
       });
       var isUser=false;
-      var UDlen=UD.length;
+      var UDlen=Object.keys(UD).length;
         for(let i = 0; i < UDlen; i++) {
               if((UD[i].isOK)&&!isUser){
-                    let IDlen = UD[i].IDs.length;
+                    let IDlen = Object.keys(UD[i].IDs).length;
                   for(let j = 0; j<IDlen; j++){
                         if(UD[i].IDs[j]==visitorId){ document.getElementById('ok').innerHTML="Проверка пройдена!"; isUser=true; break; }
                   }
