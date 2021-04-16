@@ -23,8 +23,17 @@
             console.log(data);
            UD=data;
             console.log(UD[0].IDs[0]);
-      })
-      
+      });
+      var isUser=false;
+        for(let i = 0; i < UD.length; i++) {
+              if((UD[i].isOK)&&!isUser){
+                  for(let j = 0; j<UD[i].length; j++){
+                        if(UD[i].IDs[j]==visitorId){ document.getElementById('ok').innerHTML="Проверка пройдена!"; isUser=true; break; }
+                  }
+              }
+              if(isUser){break;}
+        }
+
 </script>
 <script
   async
