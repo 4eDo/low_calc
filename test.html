@@ -25,10 +25,11 @@
             console.log(UD[0].IDs[0]);
       });
       var isUser=false;
-      var shareInfoLen = Object.keys(UD).length;
-        for(let i = 0; i < Object.keys(UD).length; i++) {
+      var UDlen=UD.length;
+        for(let i = 0; i < UDlen; i++) {
               if((UD[i].isOK)&&!isUser){
-                  for(let j = 0; j<Object.keys(UD[i].IDs).length; j++){
+                    let IDlen = UD[i].IDs.length;
+                  for(let j = 0; j<IDlen; j++){
                         if(UD[i].IDs[j]==visitorId){ document.getElementById('ok').innerHTML="Проверка пройдена!"; isUser=true; break; }
                   }
               }
