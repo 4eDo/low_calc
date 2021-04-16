@@ -19,7 +19,7 @@
   $.getJSON("https://4edo.github.io/scripts/rst_UD.json?&callback",
 function(err, data) {
   if (err !== null) {
-    alert('Something went wrong: ' + err);
+    console.log('Something went wrong: ' + err);
   } else {
     alert('Your query count: ' + data.query.count);
   }
