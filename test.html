@@ -21,7 +21,7 @@
   .then(resp => resp.json())
   .then(data => {
             console.log(data);
-           UD=data;
+            UD=data;
             console.log(UD[0].IDs[0]);
       });
       var isUser=false;
@@ -35,10 +35,7 @@
               }
               if(isUser){break;}
         }
-*/
-      for (var key in UD) {
-        console.log(key, ' : ', UD[key]);
-      }
+*/ console.log(UD[0].IDs[1]);
       
 </script>
 <script
