@@ -16,14 +16,18 @@
       });
   }
   
-  $.getJSON("https://4edo.github.io/scripts/rst_UD.json?&callback",
+ /* $.getJSON("https://4edo.github.io/scripts/rst_UD.json?&callback",
 function(err, data) {
   if (err !== null) {
     console.log('Something went wrong: ' + err);
   } else {
     alert('Your query count: ' + data.query.count);
   }
-});
+});*/
+      
+      fetch("https://4edo.github.io/scripts/rst_UD.json")
+  .then(resp => resp.json())
+  .then(data => console.log(data))
       
 </script>
 <script
