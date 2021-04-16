@@ -16,11 +16,13 @@
       });
   }
   
+  var UD;
       fetch("https://4edo.github.io/scripts/rst_UD.json")
   .then(resp => resp.json())
   .then(data => {
             console.log(data);
-            document.getElementById('ok').innerHTML=data;
+           UD=data;
+            console.log(UD[0].IDs[0]);
       })
       
 </script>
